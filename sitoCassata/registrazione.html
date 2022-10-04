@@ -1,91 +1,120 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Registrati</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <head>
+        <title>Registrati</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-italia@2.0.4/dist/css/bootstrap-italia.min.css" crossorigin="anonymous">
-  </head>
-  <body>
-    <h1>Benvenuto! Registrati</h1>
-<br>
-<br>
-    <form >
-    <div>
-        <div class="row">
-          <div class="form-group col-md-6">
-				<label for="inputNome">Nome</label>
-				<br>
-            <input type="text" class="form-control" id="nome" placeholder="inserisci il tuo nome">
-			</div>
-          <div class="form-group col-md-6">
-				<label for="inputCognome">Cognome</label>
-				<br>
-            <input type="text" class="form-control" id="cognome" placeholder="inserisci il tuo cognome">
-			</div>
-        <div class="row">
-          <div class="form-group col-md-6">
-				<label for="inputNome">Data di nascita</label>
-				<br>
-            <input type="date" class="form-control" id="data" placeholder="data di nascita"> 
-			</div>
-          <div class="form-group col-md-6">
-				<label for="inputNome">Numero di telefono</label>
-				<br>
-            <input type="tel" class="form-control" id="nome" placeholder="numero di telefono"> 
-			</div>
-        </div>
-          <div class="form-group col-md-6">
-		  <!--Controlla email-->
-            <label for="inputEmail4">Email</label>
-            <input type="email" class="form-control" id="inputEmail4" placeholder="inserisci il tuo indirizzo email">
-          </div>
-          <div class="form-group col-md-6">
-		  <!--Controllo password, segna puntini-->
-    <label for="exampleInputPassword3">Password</label>
-    <input type="password" data-bs-input class="form-control input-password input-password-strength-meter" data-bs-enter-pass="Puoi usare un testo di aiuto personalizzato" id="exampleInputPassword3">
-    <span class="password-icon" aria-hidden="true">
-      <svg class="password-icon-visible icon icon-sm"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-password-visible"></use></svg>
-      <svg class="password-icon-invisible icon icon-sm d-none"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-password-invisible"></use></svg>
-    </span>
-        </div>
-          <div class="form-group col-md-4">
-            <div class="select-wrapper">
-			<!-- Multiscelta -->
-              <label for="selectID">Sesso</label>
-              <select id="selectID">
-                <option value="Maschio">Maschio</option>
-                <option value="Femmina">Femmina</option>
-                <option value="Altro">Altro</option>
-              </select>
-            </div>
-        </div>
-        <div class="row">
-          <div class="form-group col-md-6">
-            <div class="toggles">
-              <label for="lbSaveAccess">
-                Salvare l'accesso?
-                <input type="checkbox" id="lbSaveAccess">
-                <span class="lever"></span>
-              </label>
-            </div>
-          </div>
-        </div>
-        <div class="row mt-4">
-          <div class="form-group col text-center">
-            <button type="button" class="btn btn-outline-primary">Annulla</button>
-            <button type="submit" class="btn btn-primary">Conferma</button>
-          </div>
-        </div>
-      </div>
-    </form>
-    <!-- JS -->
-    <script crossorigin="anonymous">
-        window.__PUBLIC_PATH__ = 'https://cdn.jsdelivr.net/npm/bootstrap-italia@2.0.4/dist/fonts'
-      </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap-italia@2.0.4/dist/js/bootstrap-italia.bundle.min.js" crossorigin="anonymous"></script>
-  </body>
+        <!-- CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-italia@2.0.4/dist/css/bootstrap-italia.min.css" crossorigin="anonymous">
+    </head>
+    <body>
+
+        <!--Intestazione-->           
+
+        <h1>Benvenuto! Registrati</h1>
+        <br>
+        <br>
+        <form>
+            <div>
+
+                <!--Input nome-->                   
+
+                <div class="row">
+                    <div class="form-group col-md-6">
+                        <label for="inputNome">Nome</label>
+                        <br>
+                        <input type="text" class="form-control" id="nome" placeholder="inserisci il tuo nome">
+                    </div>
+
+                    <!--Input cognome-->                       
+
+                    <div class="form-group col-md-6">
+                        <label for="inputCognome">Cognome</label>
+                        <br>
+                        <input type="text" class="form-control" id="cognome" placeholder="inserisci il tuo cognome">
+                    </div>
+
+                    <!--Input data di nascita-->                       
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <label for="inputNome">Data di nascita</label>
+                            <br>
+                            <input type="date" class="form-control" id="data" placeholder="data di nascita"> 
+                        </div>
+
+                        <!--Input numero di telefono-->    
+
+                        <div class="form-group col-md-6">
+                            <label for="inputNome">Numero di telefono</label>
+                            <br>
+                            <input type="tel" class="form-control" id="nome" placeholder="numero di telefono"> 
+                        </div>
+                    </div>
+
+                    <!--Input email-->
+
+                    <div class="form-group col-md-6">                  
+                        <label for="inputEmail4">Email</label>
+                        <input type="email" class="form-control" id="inputEmail4" placeholder="inserisci il tuo indirizzo email">
+                    </div>
+
+                    <!--Controllo password, segna puntini-->
+
+                    <div class="form-group col-md-6">
+
+
+                        <label for="exampleInputPassword3">Password</label>
+                        <input type="password" data-bs-input class="form-control input-password input-password-strength-meter" data-bs-enter-pass="Metti caratteri diversi, caratteri speciali, maiuscole e minuscole" id="exampleInputPassword3">
+                        <span class="password-icon" aria-hidden="true">
+                            <svg class="password-icon-visible icon icon-sm"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-password-visible"></use></svg>
+                            <svg class="password-icon-invisible icon icon-sm d-none"><use href="/bootstrap-italia/dist/svg/sprites.svg#it-password-invisible"></use></svg>
+                        </span>
+                    </div>
+
+                    <!-- Multiscelta -->
+
+                    <div class="form-group col-md-4">
+                        <div class="select-wrapper">
+                            <label for="selectID">Sesso</label>
+                            <select id="selectID">
+                                <option value="Maschio">Maschio</option>
+                                <option value="Femmina">Femmina</option>
+                                <option value="Altro">Altro</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Leva da muovere -->
+
+                    <div class="row">
+                        <div class="form-group col-md-6">
+                            <div class="toggles">
+                                <label for="lbSaveAccess">
+                                    Salvare l'accesso?
+                                    <input type="checkbox" id="lbSaveAccess">
+                                    <span class="lever"></span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Bottoni -->
+
+                    <div class="row mt-4">
+                        <div class="form-group col text-center">
+                            <button type="button" class="btn btn-outline-primary">Annulla</button>
+                            <button type="submit" class="btn btn-primary">Conferma</button>
+                        </div>
+                    </div>
+                </div>
+        </form>
+        <!-- JS -->
+        <script crossorigin="anonymous">
+            window.__PUBLIC_PATH__ = 'https://cdn.jsdelivr.net/npm/bootstrap-italia@2.0.4/dist/fonts'
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap-italia@2.0.4/dist/js/bootstrap-italia.bundle.min.js" crossorigin="anonymous"></script>
+    </body>
 </html>
