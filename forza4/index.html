@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Forza Quattro</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    </head>
+    <body>
+        <script>
+			<!--Inizializzo la tabella, i turni e le posizioni-->
+            var table = [[0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0],
+                [0, 0, 0, 0, 0, 0, 0, 0]];
+            
+            var t = 0;
+            var b0 = 5;
+            var b1 = 5;
+            var b2 = 5;
+            var b3 = 5;
+            var b4 = 5;
+            var b5 = 5;
+            var b6 = 5;
+            
+        </script>
+        <script>
+		
+			<!--Funzione color che alterna i colori (e quindi i turni)-->
+            function color(t) {
+                var d = "";
+                if ((t % 2) === 0) {
+                    d = 'red';
+                } else {
+                    d = 'blue';
+                }
+
+                return d;
+            }
+            
+
+				<!--Funzione che aggiunge il colore e controlla la vittoria-->
+            function addPos(pos1, pos2, color) {
+                if (b0 >= 0) {
+                    var cond = false;
+                    
+                    if (color === 'red') {
+                        
+                        table[pos1][pos2] = 1;
+                        
+                        if (table[pos1 + 1][pos2] === 1 && table[pos1 + 2][pos2] === 1 && table[pos1 + 3][pos2] === 1) {
+                            cond = true;
+                        } else if (table[pos1 - 1][pos2] === 1 && table[pos1 - 2][pos2] === 1 && table[pos1 - 3][pos2] === 1) {
+                            cond = true;
+                        } else if (table[pos1][pos2 + 1] === 1 && table[pos1][pos2 + 2] === 1 && table[pos1][pos2 + 3] === 1) {
+                            cond = true;
+                        } else if (table[pos1][pos2 - 1] === 1 && table[pos1][pos2 - 2] === 1 && table[pos1][pos2 - 3] === 1) {
+                            cond = true;
+                        } else if (table[pos1 + 1][pos2 + 1] === 1 && table[pos1 + 2][pos2 + 2] === 1 && table [pos1 + 3][pos2 + 3] === 1) {
+							cond = true;
+						} else if (table[pos1 - 1][pos2 - 1] === 1 && table[pos1 - 2][pos2 - 2] === 1 && table[pos1 - 3][pos2 - 3] === 1) {
+							cond = true;
+						} else if (table[pos1 + 1][pos2 - 1] === 1 && table[pos1 + 2][pos2 - 2] === 1 && table[pos1 + 3][pos2 - 3] === 1) {
+							cond = true;
+						} else if (table[pos1 - 1][pos2 + 1] === 1 && table [pos1 - 2][pos2 + 2] === 1 && table[pos1 - 3][pos2 + 3] === 1) {
+							cond = true;
+						}
+                        
+                        if(cond === true){
+                            window.alert("Red win!");
+                        }
+
+                    } else {
+
+                        table[pos1][pos2] = 2;
+                        
+                        if (table[pos1 + 1][pos2] === 2 && table[pos1 + 2][pos2] === 1 && table[pos1 + 3][pos2] === 1) {
+                            cond = true;
+                        } else if (table[pos1 - 1][pos2] === 2 && table[pos1 - 2][pos2] === 2 && table[pos1 - 3][pos2] === 2) {
+                            cond = true;
+                        } else if (table[pos1][pos2 + 1] === 2 && table[pos1][pos2 + 2] === 2 && table[pos1][pos2 + 3] === 2) {
+                            cond = true;
+                        } else if (table[pos1][pos2 - 1] === 2 && table[pos1][pos2 - 2] === 2 && table[pos1][pos2 - 3] === 2) {
+                            cond = true;
+                        } else if (table[pos1 + 1][pos2 + 1] === 2 && table[pos1 + 2][pos2 + 2] === 2 && table [pos1 + 3][pos2 + 3] === 2) {
+							cond = true;
+						} else if (table[pos1 - 1][pos2 - 1] === 2 && table[pos1 - 2][pos2 - 2] === 2 && table[pos1 - 3][pos2 - 3] === 2) {
+							cond = true;
+						}else if (table[pos1 + 1][pos2 - 1] === 2 && table[pos1 + 2][pos2 - 2] === 2 && table[pos1 + 3][pos2 - 3] === 2) {
+							cond = true;
+						} else if (table[pos1 - 1][pos2 + 1] === 2 && table [pos1 - 2][pos2 + 2] === 2 && table[pos1 - 3][pos2 + 3] === 2) {
+							cond = true;
+						}
+                        
+                        if(cond === true){
+                            window.alert("Blue win!");
+                        }
+                    }
+                }
+            }
+        </script>
+        <div>
+			  	<br>
+			<center>
+            <p style="size: 40px">4 in a row!</p>
+			</center>
+            <br>
+        </div>
+		<center>
+        <div>
+				<!--Inserisco le frecce per fare in modo che una volta cliccate chiamino le funzioni addPos e color-->
+            <img id="b0" src="arrow.png" style="background-color:white;" height="105" width="105" onclick="document.getElementById(b0 + '0').style.backgroundColor = color(t); t++; b0–-; addPos(b0+1, 0, color(t));"/>
+            <img id="b1" src="arrow.png" style="background-color:white;" height="105" width="105" onclick="document.getElementById(b1 + '1').style.backgroundColor = color(t); t++; b1–-; addPos(b1+1, 1, color(t));"/>
+            <img id="b2" src="arrow.png" style="background-color:white;" height="105" width="105" onclick="document.getElementById(b2 + '2').style.backgroundColor = color(t); t++; b2–-; addPos(b2+1, 2, color(t));"/>
+            <img id="b3" src="arrow.png" style="background-color:white;" height="105" width="105" onclick="document.getElementById(b3 + '3').style.backgroundColor = color(t); t++; b3–-; addPos(b3+1, 3, color(t));"/>
+            <img id="b4" src="arrow.png" style="background-color:white;" height="105" width="105" onclick="document.getElementById(b4 + '4').style.backgroundColor = color(t); t++; b4–-; addPos(b4+1, 4, color(t));"/>
+            <img id="b5" src="arrow.png" style="background-color:white;" height="105" width="105" onclick="document.getElementById(b5 + '5').style.backgroundColor = color(t); t++; b5-–; addPos(5+1, 5, color(t));"/>
+            <img id="b6" src="arrow.png" style="background-color:white;" height="105" width="105" onclick="document.getElementById(b6 + '6').style.backgroundColor = color(t); t++; b6–-; addPos(b6+1, 6, color(t));"/>
+            <br><br>
+			</center>
+				<!--Formattazione della tabella-->
+            <table border="3" align="center">
+                <tr>
+                    <td id = '00'></td>
+                    <td><img id="01" style="background-color:white;" height="100" width="100"/></td>
+                    <td><img id="02" style="background-color:white;" height="100" width="100"/></td>
+                    <td><img id="03" style="background-color:white;" height="100" width="100"/></td>
+                    <td><img id="04" style="background-color:white;" height="100" width="100"/></td>
+                    <td><img id="05" style="background-color:white;" height="100" width="100"/></td>
+                    <td><img id="06" style="background-color:white;" height="100" width="100"/></td>
+                </tr>
+                <tr>
+                    <td><img id="10" style="background-color:white;" height="100" width="100"/></td>
+                    <td><img id="11" style="background-color:white;" height="100" width="100"/></td>
+                    <td><img id="12" style="background-color:white;" height="100" width="100"/></td>
+                    <td><img id="13" style="background-color:white;" height="100" width="100"/></td>
+                    <td><img id="14" style="background-color:white;" height="100" width="100"/></td>
+                    <td><img id="15" style="background-color:white;" height="100" width="100"/></td>
+                    <td><img id="16" style="background-color:white;" height="100" width="100"/></td>
+                </tr>
+                <tr>
+                    <td><img id="20" style="background-color:white;" height="100" width="100"/></td>
+                    <td><img id="21" style="background-color:white;" height="100" width="100"/></td>
+                    <td><img id="22" style="background-color:white;" height="100" width="100"/></td>
+                    <td><img id="23" style="background-color:white;" height="100" width="100"/></td>
+                    <td><img id="24" style="background-color:white;" height="100" width="100"/></td>
+                    <td><img id="25" style="background-color:white;" height="100" width="100"/></td>
+                    <td><img id="26" style="background-color:white;" height="100" width="100"/></td>
+                </tr>
+                <tr>
+                    <td><img id="30" style="background-color:white;" height="100" width="100"/></td>
+                    <td><img id="31" style="background-color:white;" height="100" width="100"/></td>
+                    <td><img id="32" style="background-color:white;" height="100" width="100"/></td>
+                    <td><img id="33" style="background-color:white;" height="100" width="100"/></td>
+                    <td><img id="34" style="background-color:white;" height="100" width="100"/></td>
+                    <td><img id="35" style="background-color:white;" height="100" width="100"/></td>
+                    <td><img id="36" style="background-color:white;" height="100" width="100"/></td>
+                </tr>
+                <tr>
+                    <td><img id="40" style="background-color:white;" height="100" width="100"/></td>
+                    <td><img id="41" style="background-color:white;" height="100" width="100"/></td>
+                    <td><img id="42" style="background-color:white;" height="100" width="100"/></td>
+                    <td><img id="43" style="background-color:white;" height="100" width="100"/></td>
+                    <td><img id="44" style="background-color:white;" height="100" width="100"/></td>
+                    <td><img id="45" style="background-color:white;" height="100" width="100"/></td>
+                    <td><img id="46" style="background-color:white;" height="100" width="100"/></td>
+                </tr>
+                <tr>
+                    <td><img id="50" style="background-color:white;" height="100" width="100"/></td>
+                    <td><img id="51" style="background-color:white;" height="100" width="100"/></td>
+                    <td><img id="52" style="background-color:white;" height="100" width="100"/></td>
+                    <td><img id="53" style="background-color:white;" height="100" width="100"/></td>
+                    <td><img id="54" style="background-color:white;" height="100" width="100"/></td>
+                    <td><img id="55" style="background-color:white;" height="100" width="100"/></td>
+                    <td><img id="56" style="background-color:white;" height="100" width="100"/></td>
+                </tr>
+				
+            </table>
+				
+        </div>
+    </body>
+</html>
