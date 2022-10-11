@@ -36,13 +36,40 @@
                         <input type="text" class="form-control" id="cognome" placeholder="inserisci il tuo cognome">
                     </div>
 
+                    <!--Input codice fiscale-->                       
+
+                    <div class="form-group col-md-6">
+                        <label for="inputCF">Codice fiscale</label>
+                        <br>
+                        <input type="text" class="form-control" id="cf" placeholder="inserisci il tuo codice fiscale" pattern="[a-zA-Z]{6}[0-9]{2}[a-zA-Z][0-3][0-9][a-zA-Z][0-9]{3}[a-zA-Z]">
+                    </div>
+
+
+                    <!--Input partita iva-->                       
+
+                    <div class="form-group col-md-6">
+                        <label for="inputIva">Partita IVA</label>
+                        <br>
+                        <input type="number" class="form-control" id="iva" placeholder="inserisci la tua partita iva" pattern="[0-9]{11}">
+                    </div>
+
+
+
+                    <!--Input Username-->                       
+
+                    <div class="form-group col-md-6">
+                        <label for="inputUser">Username</label>
+                        <br>
+                        <input type="text" class="form-control" id="User" placeholder="inserisci il tuo username" pattern="[a-zA-Z0-9]{1,25}">
+                    </div>
+
                     <!--Input data di nascita-->                       
 
                     <div class="row">
                         <div class="form-group col-md-6">
                             <label for="inputNome">Data di nascita</label>
                             <br>
-                            <input type="date" class="form-control" id="data" placeholder="data di nascita"> 
+                            <input type="date" class="form-control" id="data" placeholder="0 Feb 0"> 
                         </div>
 
                         <!--Input numero di telefono-->    
@@ -50,15 +77,24 @@
                         <div class="form-group col-md-6">
                             <label for="inputNome">Numero di telefono</label>
                             <br>
-                            <input type="tel" class="form-control" id="nome" placeholder="numero di telefono"> 
+                            <input type="tel" class="form-control" id="nome" placeholder="0000000000" pattern="[0-9]{10}"> 
                         </div>
+
+                        <!--Input ip -->    
+
+                        <div class="form-group col-md-6">
+                            <label for="inputIP">Indirizzo IP</label>
+                            <br>
+                            <input type="text" id="ip" placeholder="0.0.0.0" pattern="^(((\d|0\d|00\d|\d{2}|0\d{2}|1\d{2}|2[0-4]\d|2[0-5]{2})\.){3})(\d|0\d|00\d|\d{2}|0\d{2}|1\d{2}|2[0-4]\d|2[0-5]{2})$"> 
+                        </div>
+
                     </div>
 
                     <!--Input email-->
 
                     <div class="form-group col-md-6">                  
                         <label for="inputEmail4">Email</label>
-                        <input type="email" class="form-control" id="inputEmail4" placeholder="inserisci il tuo indirizzo email">
+                        <input type="email" class="form-control" id="inputEmail4" placeholder="inserisci il tuo indirizzo email" pattern="[a-zA-Z]{1,}\.[a-zA-Z]{1,}\@buonarroti\.tn\.it">
                     </div>
 
                     <!--Controllo password, segna puntini-->
@@ -85,6 +121,16 @@
                                 <option value="Altro">Altro</option>
                             </select>
                         </div>
+
+                    <!--Input email-->
+<br>
+<br>
+                    <div class="form-group col-md-6">                  
+                        <label for="inputFile">File</label>
+                        <input type="file" class="form-control" id="inputFile" placeholder="file">
+                    </div>
+
+
                     </div>
 
                     <!-- Leva da muovere -->
