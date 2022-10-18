@@ -1,0 +1,119 @@
+<!doctype html>
+<html lang="en" class="h-100">
+    <head>
+        <title>L'impiccato</title>
+
+            <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-italia@2.0.4/dist/css/bootstrap-italia.min.css" crossorigin="anonymous">
+
+        </style>
+
+
+        <!-- Campo inserimento parola per impiccato + pulsante -->
+<center>
+        <input type="password" name="lbParola" id="lbParola">
+        <input type="button" value="Start" onclick="iniziogioco()">
+
+<br>
+<br>
+        <!-- Inserimento lettera singola + pulsante -->
+
+        <input type="text" name="lettera" id="lettera" pattern="[A-Z]{1}">
+        <input type="button" name="prova" value="Prova" onclick="prova()">
+
+            <footer class="mt-auto text-black-50">
+                <p><a>fatto da Cassata Gabriele usando bootStrapItalia</a>.</p>
+            </footer>
+</center>
+        </div>
+    </body>
+
+    <script>
+
+		<!-- Inizializzo lbParola per poi passarlo a parola -->
+		var lbParola = document.getElementById("lbParola")
+		var parola = [lbParola.value.length];
+     	var stadio = 1;
+      var select = document.getElementById("lettera");
+      var img = document.getElementById("img");
+      var iniziale = "";
+
+<!-- Inizializzo trovato a false per iniziare poi il gioco correttamente-->
+        var trovato = [parola.length];
+
+        for (var i = 0; i < parola.length; i++) {
+            trovato[i] = false;
+        }
+
+ 
+		<!-- Trasforma lbParola in character e lo passo a parola -->
+		
+		function iniziogioco(){
+		alert("ciao")
+for (int i=0; i<parola.value.length;i++){
+parola [i] = lbParola.value.charAt(i);
+}
+
+		<!-- Fa i trattini bassi -->
+        for (var j = 0; j < parola.length; j++) {
+                iniziale = iniziale + "_ ";
+        }
+
+}
+
+        function prova() {
+            var text = document.getElementById("lettera");
+
+            var newTxt = "";
+            var cond = false;
+            var i = 0;
+
+            while (i < parola.length) {
+                if (parola[i] === text) {
+                    cond = true;
+                    trovato[i] = true;
+                }
+                i++;
+            }
+
+            if (cond === false) {
+                img.src = ("assets/f" + stadio + ".png");
+                stadio++;
+            }
+
+            if (stadio == 8) {
+                alert("Hai perso!!!, la parola era: " + parola.toString())
+            }
+
+            cond = true;
+
+            for (var j = 0; j < parola.length; j++) {
+                if (trovato[j] == true) {
+                    newTxt = newTxt + parola[j] + " ";
+                } else {
+                    cond = false
+                    newTxt = newTxt + "_ ";
+                }
+            }
+
+            if (cond == true) {
+                alert("Hai vinto!!!!!")
+            }
+
+            lbParola.value = newTxt;
+        }
+
+    </script>
+
+        <!-- JS -->
+        <script crossorigin="anonymous">
+            window.__PUBLIC_PATH__ = 'https://cdn.jsdelivr.net/npm/bootstrap-italia@2.0.4/dist/fonts'
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap-italia@2.0.4/dist/js/bootstrap-italia.bundle.min.js" crossorigin="anonymous"></script>
+        
+
+</html>
